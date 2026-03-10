@@ -253,7 +253,23 @@ if st.button("🚀 Generar y descargar ZIP"):
                     parrafo.text = parrafo.text.replace("[Dirección]", str(direccion))
 
                 if "[Distrito]" in parrafo.text:
-                    parrafo.text = parrafo.text.replace("[Distrito]", str(distrito))
+                    partes = parrafo.text.split("[Distrito]")
+                
+                    parrafo.clear()
+                
+                    run1 = parrafo.add_run(partes[0])
+                    run1.font.name = "Poppins"
+                    run1.font.size = Pt(9.5)
+                
+                    run2 = parrafo.add_run(str(distrito))
+                    run2.underline = True
+                    run2.font.name = "Poppins"
+                    run2.font.size = Pt(9.5)
+                
+                    if len(partes) > 1:
+                        run3 = parrafo.add_run(partes[1])
+                        run3.font.name = "Poppins"
+                        run3.font.size = Pt(9.5)
 
                 if "[Asunto]" in parrafo.text:
                     parrafo.text = parrafo.text.replace("[Asunto]", str(asunto))
@@ -300,4 +316,5 @@ if st.button("🚀 Generar y descargar ZIP"):
         file_name="oficios_generados.zip",
         mime="application/zip"
     )
+
     
