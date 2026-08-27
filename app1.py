@@ -30,7 +30,7 @@ def reemplazar_variable(parrafo, variable, valor, negrita=False, subrayado=False
 
     El valor reemplazado se establece en:
     - Poppins
-    - 9.5 pt
+    - 9 pt
     """
 
     valor = "" if valor is None else str(valor)
@@ -77,7 +77,7 @@ def reemplazar_variable(parrafo, variable, valor, negrita=False, subrayado=False
             nuevo_run.text = valor
 
             nuevo_run.font.name = "Poppins"
-            nuevo_run.font.size = Pt(9.5)
+            nuevo_run.font.size = Pt(9)
             nuevo_run.bold = negrita
             nuevo_run.underline = subrayado
 
